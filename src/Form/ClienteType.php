@@ -2,26 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Categoria;
+use App\Entity\Cliente;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CategoriaType extends AbstractType
+class ClienteType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function configureOptions(OptionsResolver $resolver)
     {
-        $builder
-            ->add('categoria', TextType::class )
-        ;
+        $resolver->setDefaults(['data_class'=>Cliente::class]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $resolver->setDefaults([
-            'data_class' => Categoria::class,
-        ]);
+        $builder->add('nombre', TextType::class)
+            ->add('apellidos', TextType::class)
+            ->add('telefono', TextType::class);
     }
 
     // El form por defecto le pone un nombre al formulario
