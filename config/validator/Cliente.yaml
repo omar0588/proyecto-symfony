@@ -1,3 +1,6 @@
+# Ojo, no se ponen las variables que hacen referencia a relaciones
+# Y no es obligatorio poner todas las variables
+
 App\Entity\Cliente:
   properties:
     nombre:

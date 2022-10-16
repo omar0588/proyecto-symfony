@@ -37,4 +37,15 @@ class DireccionType extends AbstractType
             'data_class' => Direccion::class,
         ]);
     }
+
+    // El form por defecto le pone un nombre al formulario
+
+    // Solucion
+    public function getBlockPrefix()
+    {
+        return '';
+    }
+    public function getName(){
+        return '';
+    }
 }

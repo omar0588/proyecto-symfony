@@ -1,8 +1,13 @@
 # Ojo, no se ponen las variables que hacen referencia a relaciones
 # Y no es obligatorio poner todas las variables
 
-App\Entity\Categoria:
+App\Entity\Direccion:
   properties:
-    categoria:
-      - NotBlank:
-          message: 'The name of categoria cant be null or empty'
+    calle:
+      - NotBlank: ~
+
+    numero:
+      - NotBlank: ~
+
+    cod_postal:
+      - NotBlank: ~
