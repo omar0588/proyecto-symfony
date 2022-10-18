@@ -22,10 +22,10 @@ App\Entity\Restaurante:
       groups: ['get_restaurante']
 
     horarios:
-      groups: ['get_restaurante']
+      groups: []
 
     categorias:
-      groups: ['get_restaurante', 'rest_filtered']
+      groups: ['rest_filtered']
 
     municipio:
-      groups: ['get_restaurante']
+      groups: []
