@@ -31,7 +31,14 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/api/login_check, roles: PUBLIC_ACCESS } # Para que deje entrar al login
+        - { path: ^/api/user/, roles: PUBLIC_ACCESS } # Para que deje entrar a User
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY } # para proteger con jwt el resto de endpoints
+
+    role_hierarchy:
+        ROLE_CLIENTE: ROLE_USER
+        ROLE_RESTAURANTE: ROLE_USER
+        ROLE_ADMIN: [ROLE_USER, ROLE_CLIENTE, ROLE_RESTAURANTE]
+
 
 when@test:
     security:

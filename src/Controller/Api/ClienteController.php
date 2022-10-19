@@ -34,6 +34,11 @@ class ClienteController extends AbstractFOSRestController
      */
 
     public function createCliente(Request $request){
+        // Una vez creado el User hay que asociarlo
+        // 1ª El usuario se registra con password y email -> User -> idUser
+        // 2º Mostrar una nueva ventana para generar el cliente
+        //  Nombre, apellidos, telefono ....
+
         $cliente = new Cliente();
         $form = $this->createForm(ClienteType::class, $cliente);
         $form->handleRequest($request);
